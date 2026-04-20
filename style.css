@@ -1,0 +1,1801 @@
+
+    /* Сброс стилей */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        line-height: 1.6;
+        color: #ffffff;
+    }
+
+    /* ========================================
+           БЛОК HEADER - Шапка сайта
+        ======================================== */
+
+    .header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: transparent;
+        z-index: 1000;
+    }
+
+    .header__container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 80px;
+    }
+
+    /* Элемент header__logo - логотип */
+    .header__logo {
+        display: flex;
+        align-items: center;
+    }
+
+    .header__logo-image {
+        height: 137px;
+        width: 144px;
+        left: 130px;
+        padding: 20px;
+        gap: 10px;
+    }
+
+    /* Элемент header__nav - навигация */
+    .header__nav {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .header__link {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 400;
+        transition: color 0.3s ease;
+        position: relative;
+    }
+
+    .header__link:hover {
+        color: #c9976d;
+    }
+
+    .header__link::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: #c9976d;
+        transition: width 0.3s ease;
+    }
+
+    .header__link:hover::after {
+        width: 100%;
+    }
+
+    /* Элемент header__contacts - контакты */
+    .header__contacts {
+        display: flex;
+        align-items: center;
+        gap: 35px;
+        left: 1022px;
+        top: 25px;
+        height: 44px;
+        width: 287.68px;
+    }
+
+    .header__whatsapp {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: transparent;
+        border-radius: 50%;
+        transition: transform 0.3s ease;
+        text-decoration: none;
+    }
+
+    .header__whatsapp:hover {
+        transform: scale(1.1);
+    }
+
+    .header__whatsapp::before {
+        content: '';
+        display: block;
+        width: 24px;
+        height: 24px;
+        background-image: url('imgs/whatsapp.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .header__phone {
+        padding: 10px 24px;
+        background-color: transparent;
+        border: 1.5px solid #c9976d;
+        border-radius: 3px;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .header__phone::before {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-image: url('imgs/phone.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .header__phone:hover {
+        background-color: #c9976d;
+        color: #ffffff;
+    }
+
+    /* Элемент header__burger - бургер меню */
+    .header__burger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    .header__burger-line {
+        width: 25px;
+        height: 3px;
+        background-color: #333333;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    /* ========================================
+           БЛОК HERO - Главный экран
+        ======================================== */
+
+    .hero {
+        min-height: 100vh;
+        background-image: url('/imgs/Фон.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding-top: 80px;
+    }
+
+    /* Оверлей для затемнения фона */
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to right,
+                rgba(0, 0, 0, 0.5) 0%,
+                rgba(0, 0, 0, 0.3) 50%,
+                rgba(0, 0, 0, 0.2) 100%);
+    }
+
+    .hero__container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 60px 40px;
+        position: relative;
+        z-index: 2;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 60px;
+    }
+
+    /* Элемент hero__content - основной контент */
+    .hero__content {
+        flex: 1;
+        max-width: 700px;
+    }
+
+    .hero__title {
+        font-size: clamp(32px, 4vw, 56px);
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 40px;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero__button {
+        padding: 16px 40px;
+        background-color: #c9976d;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 700;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(201, 151, 109, 0.4);
+        margin-bottom: 60px;
+    }
+
+    .hero__button:hover {
+        background-color: #b8865c;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(201, 151, 109, 0.5);
+    }
+
+    /* Элемент hero__stats - статистика коттеджей */
+    .hero__stats {
+        display: flex;
+        gap: 80px;
+        align-items: flex-start;
+    }
+
+    .hero__stats-title {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 30px;
+    }
+
+    /* Блок cottage-stat - статистика коттеджа */
+    .cottage-stat {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+    }
+
+    .cottage-stat__number {
+        font-size: 120px;
+        font-weight: 700;
+        line-height: 1;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .cottage-stat__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 20px;
+    }
+
+    .cottage-stat__label {
+        font-size: 16px;
+        font-weight: 400;
+        margin-bottom: 4px;
+    }
+
+    .cottage-stat__area {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 4px;
+    }
+
+    .cottage-stat__floors {
+        font-size: 16px;
+        font-weight: 400;
+        opacity: 0.9;
+    }
+
+    /* Элемент hero__timeline - таймлайн проекта */
+    .hero__timeline {
+        flex: 0 0 350px;
+        background-color: transparent;
+        padding: 30px;
+        border-radius: 12px;
+    }
+
+    /* Блок timeline-item - элемент таймлайна */
+    .timeline-item {
+        margin-bottom: 24px;
+    }
+
+    .timeline-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .timeline-item__label {
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 6px;
+        opacity: 0.9;
+    }
+
+    .timeline-item__text {
+        font-size: 16px;
+        font-weight: 400;
+        opacity: 0.8;
+        line-height: 1.5;
+    }
+
+    /* ========================================
+           АДАПТИВНОСТЬ
+        ======================================== */
+
+    @media (max-width: 1200px) {
+        .hero__container {
+            flex-direction: column;
+        }
+
+        .hero__timeline {
+            flex: 1;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .hero__stats {
+            gap: 60px;
+        }
+
+        .cottage-stat__number {
+            font-size: 100px;
+        }
+    }
+
+    @media (max-width: 968px) {
+        .header__nav {
+            display: none;
+        }
+
+        .header__burger {
+            display: flex;
+        }
+
+        .header__container {
+            padding: 0 20px;
+        }
+
+        .hero__container {
+            padding: 40px 20px;
+        }
+
+        .hero__stats {
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .cottage-stat__number {
+            font-size: 80px;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .header__phone {
+            padding: 8px 16px;
+            font-size: 14px;
+        }
+
+        .hero__stats-title {
+            font-size: 24px;
+        }
+
+        .cottage-stat {
+            gap: 15px;
+        }
+
+        .cottage-stat__number {
+            font-size: 60px;
+        }
+
+        .cottage-stat__info {
+            padding-top: 10px;
+        }
+
+        .cottage-stat__label {
+            font-size: 14px;
+        }
+
+        .cottage-stat__area {
+            font-size: 16px;
+        }
+
+        .cottage-stat__floors {
+            font-size: 14px;
+        }
+    }
+    /* ========================================
+   БЛОК ABOUT - О проекте (Исправленная версия)
+======================================== */
+
+.about {
+    background-color: #FFFFFF;
+    padding: 120px 0 140px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Фоновая надпись "О проекте" */
+.about__background-text {
+    white-space: nowrap;
+    position: absolute;
+    top: 30px;
+    left: 100px;
+    font-size: 270px;
+    font-weight: 900;
+    color: #F5F5F5;
+    letter-spacing: -6px;
+    z-index: 0;
+    user-select: none;
+    pointer-events: none;
+    line-height: 1;
+    opacity: 0.6;
+}
+
+.about__container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: start;
+    position: relative;
+    z-index: 10;
+}
+
+/* Левая колонка - контент */
+.about__content {
+    padding-right: 40px;
+    position: relative;
+    z-index: 10;
+}
+
+.about__title {
+    font-size: 48px;
+    font-weight: 700;
+    color: #2D2D2D;
+    margin-bottom: 50px;
+    letter-spacing: -0.5px;
+    position: relative;
+    z-index: 10;
+}
+
+.about__description {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #4A4A4A;
+    margin-bottom: 30px;
+}
+
+/* Блок информации о коттеджах */
+.about__info {
+    margin-bottom: 60px;
+}
+
+.about__info-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #2D2D2D;
+    margin-bottom: 10px;
+}
+
+.about__info-item {
+    font-size: 16px;
+    line-height: 1.9;
+    color: #666666;
+    padding-left: 0;
+}
+
+/* Текстовые блоки */
+.about__block {
+    margin-bottom: 50px;
+}
+
+.about__subtitle {
+    font-size: 16px;
+    font-weight: 700;
+    color: #2D2D2D;
+    margin-bottom: 18px;
+}
+
+.about__text {
+    font-size: 16px;
+    line-height: 1.9;
+    color: #666666;
+    text-align: left;
+}
+
+.about__block--mission {
+    margin-bottom: 0;
+}
+
+/* Правая колонка - изображение + блок "Цель" */
+.about__right {
+    top: 160px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    position: relative;
+    z-index: 10;
+}
+
+/* Правая колонка - визуал */
+.about__visual {
+    position: relative;
+    height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about__image {
+    width: 100%;
+    max-width: 520px;
+    height: 520px;
+    background: linear-gradient(180deg, #A4C5D0 0%, #7BA8B8 100%);
+    border-radius: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
+}
+
+/* 3D сетка эффект */
+.about__image::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image:
+        repeating-linear-gradient(0deg,
+            rgba(0, 0, 0, 0.08) 0px,
+            transparent 1px,
+            transparent 24px,
+            rgba(0, 0, 0, 0.08) 25px),
+        repeating-linear-gradient(90deg,
+            rgba(0, 0, 0, 0.08) 0px,
+            transparent 1px,
+            transparent 24px,
+            rgba(0, 0, 0, 0.08) 25px);
+    transform: perspective(800px) rotateX(60deg) scale(1.4);
+    transform-origin: center center;
+}
+
+/* Логотип MM Group */
+.about__logo {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.about__logo-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about__logo-mm {
+    font-size: 130px;
+    font-weight: 900;
+    color: #FDB515;
+    line-height: 0.9;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.25);
+}
+
+.about__logo-group {
+    font-size: 130px;
+    font-weight: 300;
+    color: #FFFFFF;
+    line-height: 0.9;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.25);
+}
+
+.about__logo-subtitle {
+    font-size: 16px;
+    font-weight: 500;
+    color: #FFFFFF;
+    letter-spacing: 3px;
+    margin-top: 12px;
+    opacity: 0.95;
+}
+
+/* Красный декоративный блок */
+.about__decor {
+    position: absolute;
+    top: 40px;
+    right: -35px;
+    width: 160px;
+    height: 380px;
+    background-color: #C75968;
+    z-index: 1;
+}
+
+/* Декоративные точки */
+.about__dots {
+    position: absolute;
+    bottom: 30px;
+    right: 40px;
+    width: 130px;
+    height: 130px;
+    background-image: radial-gradient(circle, rgba(45, 45, 45, 0.12) 1.5px, transparent 1.5px);
+    background-size: 16px 16px;
+    z-index: 5;
+}
+
+/* Блок "Цель" под картинкой */
+.about__block--goal {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+/* ========================================
+   АДАПТИВНОСТЬ
+======================================== */
+
+@media (max-width: 1400px) {
+    .about__container {
+        padding: 0 40px;
+        gap: 60px;
+    }
+
+    .about__background-text {
+        font-size: 270px;
+        left: 60px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .about__container {
+        grid-template-columns: 1fr;
+        gap: 80px;
+    }
+
+    .about__visual {
+        height: 480px;
+        margin: 0 auto;
+    }
+
+    .about__image {
+        height: 480px;
+    }
+
+    .about__background-text {
+        font-size: 220px;
+        top: 20px;
+        left: 40px;
+    }
+
+    .about__right {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .about {
+        padding: 80px 0 100px;
+    }
+
+    .about__container {
+        padding: 0 20px;
+    }
+
+    .about__title {
+        font-size: 36px;
+        margin-bottom: 40px;
+    }
+
+    .about__content {
+        padding-right: 0;
+    }
+
+    .about__visual {
+        height: 420px;
+    }
+
+    .about__image {
+        height: 420px;
+    }
+
+    .about__logo-mm,
+    .about__logo-group {
+        font-size: 90px;
+    }
+
+    .about__logo-subtitle {
+        font-size: 10px;
+        letter-spacing: 2.5px;
+    }
+
+    .about__decor {
+        width: 120px;
+        height: 300px;
+        right: -25px;
+    }
+
+    .about__background-text {
+        font-size: 140px;
+        top: 10px;
+        left: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about {
+        padding: 60px 0 80px;
+    }
+
+    .about__title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .about__description,
+    .about__info-title,
+    .about__info-item {
+        font-size: 14px;
+    }
+
+    .about__subtitle {
+        font-size: 15px;
+    }
+
+    .about__text {
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    .about__visual {
+        height: 350px;
+    }
+
+    .about__image {
+        height: 350px;
+    }
+
+    .about__logo-mm,
+    .about__logo-group {
+        font-size: 70px;
+    }
+
+    .about__logo-subtitle {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .about__decor {
+        width: 90px;
+        height: 250px;
+        right: -20px;
+    }
+
+    .about__dots {
+        width: 100px;
+        height: 100px;
+        bottom: 20px;
+        right: 25px;
+    }
+
+    .about__background-text {
+        font-size: 80px;
+        letter-spacing: -2px;
+        left: 10px;
+    }
+}
+/* ========================================
+   БЛОК COTTAGES - Коттеджи со слайдером
+======================================== */
+
+.cottages {
+    background-color: #fdfbfb;
+    padding: 100px 0;
+    position: relative;
+}
+
+.cottages__container {
+    max-width: 1400px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 80px;
+}
+
+.cottages__title {
+    font-size: 48px;
+    font-weight: 700;
+    color: #2D2D2D;
+    padding-left: 104px;
+    margin-bottom: 40px;
+}
+
+.cottages__dots--left {
+    left: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.cottages__dots--right {
+    right: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Swiper контейнер */
+.cottagesSwiper {
+    width: 100%;
+    height: auto;
+    padding: 20px 60px;
+}
+
+.cottagesSwiper .swiper-slide {
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Слайд коттеджа */
+.cottage-slide {
+    display: grid;
+    grid-template-columns: 2.6fr 1fr;
+    gap: 0;
+    align-items: start;
+    width: 100%;
+}
+
+/* Изображение коттеджа */
+.cottage-slide__image {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(255, 255, 255, 0.15);
+}
+
+.cottage-slide__image img {
+    width: 740px;
+    height: 444px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Планы этажей */
+.cottage-slide__plans {
+    margin-top: -28px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.cottage-slide__area {
+    font-size: 48px;
+    font-weight: 700;
+    color: #2D2D2D;
+}
+
+.cottage-slide__plan-images {
+    width: 436px;
+    height: 442px;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.cottage-slide__plan {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.1);
+}
+
+/* Кастомные кнопки навигации */
+.cottages-button-prev::after,
+.cottages-button-next::after {
+    color: transparent !important;
+    text-shadow: none !important;
+}
+
+.cottages-button-prev {
+    left: 10px; /* Отрегулируйте расстояние от края */
+    background-image: url('imgs/left.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40px; /* Размер вашей иконки внутри круга */
+}
+
+.cottages-button-next {
+    right: 10px;
+    background-image: url('imgs/right.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40px;
+}
+
+
+
+
+/* ========================================
+   АДАПТИВНОСТЬ
+======================================== */
+
+@media (max-width: 1400px) {
+    .cottages__container {
+        padding: 0 40px;
+    }
+
+    .cottages__dots {
+        display: none;
+    }
+}
+
+@media (max-width: 1200px) {
+    .cottage-slide {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .cottage-slide__image {
+        height: 450px;
+    }
+
+    .cottage-slide__plan-images {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .cottage-slide__plan {
+        flex: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .cottages {
+        padding: 80px 0 100px;
+    }
+
+    .cottages__container {
+        padding: 0 20px;
+    }
+
+    .cottages__title {
+        font-size: 36px;
+        margin-bottom: 40px;
+    }
+
+    .cottagesSwiper {
+        padding: 20px 40px;
+    }
+
+    .cottage-slide__image {
+        height: 350px;
+    }
+
+    .cottage-slide__area {
+        font-size: 36px;
+    }
+
+    .cottages-button-prev,
+    .cottages-button-next {
+        width: 50px;
+        height: 50px;
+    }
+    
+
+    .cottages-button-prev::after,
+    .cottages-button-next::after {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cottages__title {
+        font-size: 28px;
+    }
+
+    .cottagesSwiper {
+        padding: 20px 30px;
+    }
+
+    .cottage-slide {
+        gap: 30px;
+    }
+
+    .cottage-slide__image {
+        height: 280px;
+        border-radius: 12px;
+    }
+
+    .cottage-slide__area {
+        font-size: 32px;
+    }
+
+    .cottage-slide__plan-images {
+        flex-direction: column;
+    }
+
+    .cottages-button-prev,
+    .cottages-button-next {
+        width: 45px;
+        height: 45px;
+    }
+
+    .cottages-button-prev::after,
+    .cottages-button-next::after {
+        font-size: 18px;
+    }
+}
+/* Основная секция */
+.location {
+    padding: 120px 0 140px;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background-color: #FFFFFF;
+}
+
+/* Ограничитель ширины контента */
+.location__container {
+    top: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 80px; /* Увеличил до 80px для симметрии с блоком about */
+    position: relative;
+}
+
+/* Фоновая надпись "ЛОКАЦИЯ" */
+.location__bg-text {
+    white-space: nowrap;
+    position: absolute;
+    top: 0;
+    left: 100px;
+    font-size: 270px;
+    font-weight: 900;
+    color: #F5F5F5;
+    letter-spacing: -6px;
+    z-index: 1;
+    pointer-events: none;
+    line-height: 1;
+    opacity: 0.6;
+}
+
+/* Гибкая оболочка для текста и карты */
+.location__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+    gap: 60px;
+}
+
+/* Левая колонка с текстом */
+.location__info {
+    flex: 1;
+    max-width: 500px;
+}
+
+.location__title {
+    font-size: 48px;
+    font-weight: 700;
+    color: #2D2D2D;
+    margin-bottom: 50px;
+    letter-spacing: -0.5px;
+}
+
+.location__description p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #4A4A4A;
+    margin-bottom: 30px;
+}
+
+/* Правая колонка: Карта + Декор */
+.location__map-wrapper {
+    position: relative;
+    flex: 1.2;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Сама карта (теперь все свойства в одном месте) */
+.location__map {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    z-index: 2;
+    background: #EEE;
+    overflow: hidden;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
+}
+
+.location__map iframe, 
+.location__map img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+    display: block;
+}
+
+/* Декоративный бордовый прямоугольник под картой */
+.location__map-decor {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: px;
+    height: 400px;
+    background-color: #8B3A47;
+    z-index: 1;
+}
+
+/* Адаптив под мобильные устройства */
+@media (max-width: 992px) {
+    .location__content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .location__bg-text {
+        font-size: 120px;
+        top: 10%;
+        left: 20px;
+    }
+    
+    .location__map-wrapper {
+        width: 100%;
+        margin-top: 40px;
+        justify-content: center;
+    }
+
+    .location__map,
+    .location__map-decor {
+        width: 100%; /* На мобильных карта растягивается во всю ширину */
+        max-width: 500px;
+    }
+
+    .location__map-decor {
+        right: 0;
+        bottom: -10px;
+    }
+}
+
+.advantages {
+    padding: 100px 0;
+    min-height: 100vh;
+    position: relative;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.advantages__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+/* Огромный текст на фоне */
+.advantages__bg-text {
+    position: absolute;
+    top: 24%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 270px;
+    font-weight: 900;
+    color: #f2f2f2; /* Очень светлый серый */
+    z-index: 1;
+    pointer-events: none;
+    line-height: 1;
+}
+
+.advantages__title {
+    font-size: 48px;
+    font-weight: 700;
+    color: #2D2D2D;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 80px;
+}
+
+.advantages__content {
+    display: flex;
+    align-items: flex-start;
+    gap: 80px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Стилизация картинки и декора */
+.advantages__image-wrapper {
+    position: relative;
+    flex: 0 0 450px;
+}
+
+.advantages__img {
+    width: 100%;
+    position: relative;
+    z-index: 3;
+}
+
+/* Сетка преимуществ */
+.advantages__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.advantage-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.advantage-item__icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+}
+
+.advantage-item__text h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #2D2D2D;
+    margin-bottom: 10px;
+}
+
+.advantage-item__text p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #666;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    .advantages__content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .advantages__grid {
+        grid-template-columns: 1fr;
+    }
+    .advantages__bg-text {
+        font-size: 100px;
+    }
+}
+
+.tech {
+    --text-color: #555;
+    --heading-color: #222;
+}
+
+.tech-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    overflow: hidden;
+}
+
+/* Большая фоновая надпись */
+.bg-watermark {
+    position: absolute;
+    top: -20px;
+    right: 10px;
+    font-size: 270px;
+    font-weight: 900;
+    color: #f2f2f2; /* Очень светлый серый */
+    z-index: -1;
+    pointer-events: none;
+    text-transform: none;
+}
+
+.main-title {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 80px;
+    color: var(--heading-color);
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+/* Смещение колонок: левая выше, правая ниже */
+.left-col {
+    margin-top: 0;
+}
+
+.right-col {
+    margin-top: 100px; /* Создаем каскадный эффект */
+}
+
+.item {
+    margin-bottom: 60px;
+}
+
+.item img {
+    max-width: 250px;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.item h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: var(--heading-color);
+    text-transform: uppercase;
+}
+
+.item p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+/* Адаптив для мобилок */
+@media (max-width: 768px) {
+    .content-grid { grid-template-columns: 1fr; }
+    .right-col { margin-top: 0; }
+    .bg-watermark { font-size: 80px; }
+}
+
+/* Подключаем шрифт, похожий на оригинал */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+.promo-block {
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.promo-container {
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+    border: 4px solid #7a212e; /* Темно-красная рамка как на фото */
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.promo-title {
+    font-size: 32px;
+    color: #2c3e50;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+}
+
+.promo-subtitle {
+    font-size: 18px;
+    color: #34495e;
+    margin-bottom: 35px;
+}
+
+.promo-form {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap; /* Чтобы на мобилках блоки вставали друг под друга */
+}
+
+.input-group {
+    position: relative;
+    flex: 1;
+    min-width: 250px;
+}
+
+/* Стили полей ввода */
+.input-group input {
+    width: 100%;
+    padding: 18px 18px 18px 45px; /* Отступ слева под иконку */
+    border: none;
+    background-color: #f0f4f8;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #2c3e50;
+    box-sizing: border-box;
+    outline: none;
+}
+
+/* Имитация иконок (можно заменить на FontAwesome или SVG) */
+.icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    opacity: 0.4;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.user-icon { background-image: url('https://cdn-icons-png.flaticon.com/512/1077/1077114.png'); }
+.phone-icon { background-image: url('https://cdn-icons-png.flaticon.com/512/483/483947.png'); }
+
+/* Кнопка */
+.submit-btn {
+    background-color: #8b2635; /* Фирменный бордовый цвет */
+    color: white;
+    border: none;
+    padding: 18px 45px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    min-width: 200px;
+}
+
+.submit-btn:hover {
+    background-color: #6d1d29;
+}
+
+/* Адаптивность для телефонов */
+@media (max-width: 768px) {
+    .promo-form {
+        flex-direction: column;
+    }
+    .input-group, .submit-btn {
+        width: 100%;
+    }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+
+.payment-section {
+    position: relative;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #fff;
+    padding: 80px 20px;
+    overflow: hidden; /* Чтобы фоновый текст не вылезал */
+    text-align: center;
+}
+
+/* Огромный текст на фоне */
+.bg-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    font-size: 250px;
+    font-weight: 700;
+    color: #f2f2f2;
+    z-index: 1;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main-title {
+    font-size: 42px;
+    color: #333;
+    margin-bottom: 60px;
+    font-weight: 700;
+}
+
+.payment-grid {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.payment-item {
+    flex: 1;
+    min-width: 200px;
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-wrapper {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.logo-wrapper img {
+    max-width: 100%;
+    max-height: 80px;
+    object-fit: contain;
+}
+
+.payment-item p {
+    font-size: 16px;
+    line-height: 1.4;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Кастомные иконки (0% и Биткоин) */
+.percent-icon {
+    font-size: 60px;
+    font-weight: 700;
+    color: #333;
+}
+
+.bitcoin-icon {
+    width: 70px;
+    height: 70px;
+    background-color: #f7931a;
+    color: white;
+    border-radius: 50%;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .bg-text { font-size: 100px; }
+    .main-title { font-size: 28px; }
+    .payment-grid { flex-direction: column; align-items: center; }
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+
+.contacts-block {
+    display: flex;
+    max-width: 1100px;
+    margin: 20px auto;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    font-family: 'Ubuntu', sans-serif;
+    min-height: 400px;
+}
+
+/* Стили карты */
+.contacts-map {
+    flex: 1;
+    background-image: url('https://i.stack.imgur.com/HILPH.png'); /* Замените на реальную карту */
+    background-size: cover;
+    background-position: center;
+    min-width: 50%;
+}
+
+/* Стили правой панели */
+.contacts-info {
+    flex: 1;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contacts-title {
+    font-size: 48px;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 20px 0;
+}
+
+.contacts-address {
+    font-size: 18px;
+    color: #777;
+    margin-bottom: 40px;
+    line-height: 1.5;
+}
+
+.contacts-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.contact-item a {
+    text-decoration: none;
+    color: #444;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.contact-item a:hover {
+    color: #000;
+}
+
+/* Иконки (можно заменить на FontAwesome) */
+.icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    opacity: 0.7;
+}
+
+.phone-icon { background-image: url('https://cdn-icons-png.flaticon.com/512/483/483947.png'); }
+.mail-icon { background-image: url('https://cdn-icons-png.flaticon.com/512/542/542689.png'); }
+.insta-icon { background-image: url('https://cdn-icons-png.flaticon.com/512/2111/2111463.png'); }
+
+/* QR-код */
+.details-qr img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 900px) {
+    .contacts-block {
+        flex-direction: column;
+    }
+    .contacts-map {
+        height: 300px;
+    }
+    .contacts-info {
+        padding: 30px;
+    }
+    .contacts-details {
+        flex-direction: column-reverse;
+        gap: 30px;
+    }
+}
+
+.contacts-block {
+    display: flex;
+    max-width: 1100px;
+    margin: 20px auto;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    font-family: 'Ubuntu', sans-serif;
+    min-height: 450px; /* Фиксируем общую высоту блока */
+}
+
+/* Контейнер для карты */
+.contacts-map {
+    flex: 1;
+    min-width: 50%;
+    overflow: hidden; /* Чтобы карта не вылезала за скругления, если они будут */
+}
+
+/* Сама карта внутри контейнера */
+.contacts-map iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Правая колонка */
+.contacts-info {
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contacts-title {
+    font-size: 42px;
+    margin: 0 0 15px 0;
+}
+
+.contacts-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* Выравнивание QR-кода по низу текста */
+}
+
+/* Адаптив для планшетов и телефонов */
+@media (max-width: 850px) {
+    .contacts-block {
+        flex-direction: column;
+    }
+    .contacts-map {
+        height: 350px; /* На мобилках карта будет сверху, задаем ей высоту */
+        width: 100%;
+    }
+    .contacts-info {
+        padding: 30px;
+    }
+}
+
+
+
+
+/* Подключаем шрифт Ubuntu или похожий без засечек */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap');
+
+.footer-block {
+    width: 100%;
+    padding: 40px 0 20px 0;
+    background-color: #ffffff;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Стили навигации */
+.footer-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Распределяет пункты по всей ширине */
+    margin-bottom: 30px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #4a4a4a;
+    font-size: 18px;
+    font-weight: 300; /* Тонкое начертание как на фото */
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #000;
+}
+
+/* Стили ссылки разработчика */
+.footer-copyright {
+    text-align: center;
+}
+
+.footer-copyright a {
+    color: #a34b52; /* Приглушенный красно-коричневый цвет */
+    text-decoration: underline;
+    font-size: 16px;
+    transition: opacity 0.3s ease;
+}
+
+.footer-copyright a:hover {
+    opacity: 0.8;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 600px) {
+    .footer-nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .nav-link {
+        font-size: 16px;
+    }
+}
